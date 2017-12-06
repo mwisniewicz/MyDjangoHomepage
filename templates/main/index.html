@@ -6,6 +6,7 @@
 	<title>Homepage</title>
 </head>
 <body>
+	<h2>WEB List</h2>
 	<div class="django-class">
 		{% if access_records %}
 		<table>
@@ -23,6 +24,27 @@
 		{% else %}
 		<p> No records! </p>
 		
+		{% endif %}
+	</div>
+	<h2>User List</h2>
+	<div class="users-list">
+		{% if users %}
+			<table>
+				<thead>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>E-mail</th>
+				</thead>
+				{% for usern in users %}
+				<tr>
+					<td>{{ usern.firstname }}</td>
+					<td>{{ usern.lastname }}</td>
+					<td>{{ usern.email }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+			{% else %}
+			<p>No Users</p>
 		{% endif %}
 	</div>
 </body>
