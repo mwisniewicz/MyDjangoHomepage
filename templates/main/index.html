@@ -1,51 +1,47 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Homepage</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mateusz Wiśniewicz</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+	<link rel="stylesheet" href="{% static './css/main.css' %}">
+
 </head>
 <body>
-	<h2>WEB List</h2>
-	<div class="django-class">
-		{% if access_records %}
-		<table>
-			<thead>
-				<th>Site Name</th>
-				<th>Date</th>
-			</thead>
-		{% for acc in access_records %}
-		<tr>
-			<td>{{ acc.name }}</td>
-			<td>{{ acc.date }}</td>
-		</tr>
-		{% endfor %}
-		</table>
-		{% else %}
-		<p> No records! </p>
-		
-		{% endif %}
-	</div>
-	<h2>User List</h2>
-	<div class="users-list">
-		{% if users %}
-			<table>
-				<thead>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>E-mail</th>
-				</thead>
-				{% for usern in users %}
-				<tr>
-					<td>{{ usern.firstname }}</td>
-					<td>{{ usern.lastname }}</td>
-					<td>{{ usern.email }}</td>
-				</tr>
-				{% endfor %}
-			</table>
-			{% else %}
-			<p>No Users</p>
-		{% endif %}
-	</div>
+	<header>
+		<div class="container">
+		<nav>
+			<div class="hamburger-menu">
+		  		<div class="bar"></div>	
+			</div>
+			<div class="logo">
+				<a href="#"><span>M</span>Wisniewicz</a>
+			</div>
+			<ul class="nav-top">
+				<li><a href="#">.home</a></li>
+				<li><a href="#">.about</a></li>
+				<li><a href="#">.contact</a></li>
+			</ul>
+			
+		</nav>
+		</div>
+	</header>
+	<main>
+		<h1><span><i class="fa fa-cogs" aria-hidden="true"></i></span>Page under construction</h1><br>
+		<h2>Visit my GitHub <span><i class="devicon-github-plain colored"></i></span>: <a href="https://github.com/mwisniewicz" target="__blank">mwisniewicz</a></h2>
+	</main>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		(function () {
+	$('.hamburger-menu').on('click', function() {
+		$('.bar').toggleClass('animate');
+		$('.nav-top').toggleClass('displayIn');
+	})
+})();
+	</script>
 </body>
 </html>
