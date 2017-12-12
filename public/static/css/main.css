@@ -153,8 +153,6 @@ nav ul.nav-top.displayIn {
 /* MAIN DESKTOP */
 
 main {
-
-	height: 60vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -185,8 +183,34 @@ main a {
 	font-weight: 400;
 }
 
-/* FOOTER DESKTOP */
 
-footer {
-	height: 200px;
+
+/* BLOG */
+
+.articles-container {
+
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 30px;
+}
+
+.articles-container img {
+	width: 120px;
+	height: 120px;
+}
+
+article header {
+	display: flex;
+	flex-direction: row;
+}
+
+article header h2{
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
+.title { padding: 20px; }
+
+article {
+	padding-bottom: 40px;
 }
