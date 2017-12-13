@@ -8,10 +8,8 @@ def index(request):
 	return render(request, 'blog/index.html',context=articles_dict)
 
 def form_article_view(request):
-	form = forms.FormArticle()
+	form = forms.FormArticle(request.POST or None)
 	if request.method == 'POST':
-
-		form = forms.FormArticle()
 		
 		if form.is_valid():
 
