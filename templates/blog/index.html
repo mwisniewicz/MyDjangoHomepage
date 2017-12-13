@@ -29,6 +29,7 @@
 		<div class="articles-container">
 			{% if articles %}
 				{% for art in articles %}
+				<p>ARTICLE LENGTH: </p><span>{{ art.text.getTeaser }}</span>
 				<article>
 					<header>
 						<img src="{{ art.thumbnail.url }}">
