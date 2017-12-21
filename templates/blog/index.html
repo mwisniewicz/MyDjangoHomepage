@@ -17,8 +17,8 @@
 				<a href="#"><span>M</span>Wisniewicz</a>
 			</div>
 			<ul class="nav-top">
-				<li><a href="/">.home</a></li>
-				<li><a href="/blog">.blog</a></li>
+				<li><a href="{% url 'index' %}">.home</a></li>
+				<li><a href="{% url 'blog:index' %}">.blog</a></li>
 				<li><a href="#">.contact</a></li>
 			</ul>
 			
@@ -26,6 +26,11 @@
 		</div>
 	</header>
 	<main>
+		<button><a href="{% url 'blog:form_article' %}">Add New Article</a></button>
+
+		<button><a href="{% url 'admin:index' %}">Control Panel</a></button>
+
+		<button><a href="{% url 'index' %}">Home</a></button>
 		<div class="articles-container">
 			{% if articles %}
 				{% for art in articles %}
