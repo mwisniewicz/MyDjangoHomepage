@@ -1,7 +1,7 @@
 from django import forms
+from blog.models import Article
 
-class FormArticle(forms.Form):
-	title = forms.CharField()
-	publication_date = forms.DateField(widget=forms.SelectDateWidget(empty_label="Nothing"))
-	text = forms.CharField(widget=forms.Textarea)
-	thumbnail = forms.ImageField()
+class FormArticle(forms.ModelForm):
+	class Meta:
+		model = Article
+		fields = '__all__'
