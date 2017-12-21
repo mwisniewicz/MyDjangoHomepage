@@ -1,31 +1,7 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>BLOG</title>
-	<link rel="stylesheet" href="{% static './css/main.css' %}">
-</head>
-<body>
-	<header>
-		<div class="container">
-		<nav>
-			<div class="hamburger-menu">
-		  		<div class="bar"></div>	
-			</div>
-			<div class="logo">
-				<a href="#"><span>M</span>Wisniewicz</a>
-			</div>
-			<ul class="nav-top">
-				<li><a href="{% url 'index' %}">.home</a></li>
-				<li><a href="{% url 'blog:index' %}">.blog</a></li>
-				<li><a href="#">.contact</a></li>
-			</ul>
-			
-		</nav>
-		</div>
-	</header>
-	<main>
+{% extends "main/base.html" %}
+{% block body_block %}
+
 		<button><a href="{% url 'blog:form_article' %}">Add New Article</a></button>
 
 		<button><a href="{% url 'admin:index' %}">Control Panel</a></button>
@@ -52,15 +28,4 @@
 			<p>No articles!</p>
 			{% endif %}
 		</div>
-	</main>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-		(function () {
-	$('.hamburger-menu').on('click', function() {
-		$('.bar').toggleClass('animate');
-		$('.nav-top').toggleClass('displayIn');
-	})
-})();
-	</script>
-</body>
-</html>
+{% endblock %}
